@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>神経衰弱ゲーム</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <section id="startScreen" class="screen">
+      <p class="song-tag">ダンジョンRPG企画 ミニゲーム #08 / 対応曲: kanashikuttemo</p>
+      <h1>思い出のペアを<br>めくり出せ!</h1>
+      <p class="hint">
+        8枚→16枚→32枚と、カードがどんどん小さく増える全3ステージ。<br>
+        同じ絵柄のペアを見つけよう。<br>
+        BGMが流れきる前にステージ3までクリアできないと<br>
+        タイムアップ(ゲームオーバー)!
+      </p>
+      <p class="best-hint" id="bestHint"></p>
+      <button id="startBtn" class="primary-btn" disabled>読み込み中…</button>
+    </section>
+
+    <section id="gameScreen" class="screen hidden">
+      <header id="hud">
+        <div id="turnsLabel">手数 0</div>
+        <div id="scoreLabel">SCORE 0</div>
+        <div id="comboLabel" class="hidden">0 COMBO</div>
+        <button id="muteBtn" class="mute-btn">🔊</button>
+      </header>
+      <div id="stageLabel">STAGE 1 / 3</div>
+      <div id="toast" class="hidden"></div>
+      <div id="board"></div>
+      <div id="stageTransition" class="hidden"></div>
+    </section>
+
+    <section id="resultScreen" class="screen hidden">
+      <h2 id="resultTitle">♪ kanashikuttemo 入手!</h2>
+      <p id="resultMessage"></p>
+      <button id="replayBtn" class="primary-btn secondary">曲を通しで聴く</button>
+      <button id="retryBtn" class="primary-btn">もう一度あそぶ</button>
+    </section>
+
+    <audio id="bgm" src="assets/kanashikuttemo.m4a" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

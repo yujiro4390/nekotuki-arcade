@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>和音を作れ!ゲーム</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <section id="startScreen" class="screen">
+      <p class="song-tag">ダンジョンRPG企画 ミニゲーム #03 / 対応曲(仮): sakura_88</p>
+      <h1>耳をたよりに<br>和音を再現せよ!</h1>
+      <p class="hint">
+        中央のカードをタップすると「お手本の和音」が鳴る(何度でも聴き直せる)。<br>
+        下の6個のボタンには音名が書いていないので、右下の🔈で1音ずつ聴いて<br>
+        確かめよう。お手本と同じ音を選んで「和音を鳴らす」で確認。<br>
+        外れたらダミー音も含めてボタンの組み合わせが引き直されて再挑戦(回数制限なし)。<br>
+        ROUND1〜3は三和音、ROUND4〜5は四和音(セブンスコード)。<br>
+        全5ラウンドクリアで曲入手!
+      </p>
+      <p class="best-hint" id="bestHint"></p>
+      <button id="startBtn" class="primary-btn">タップしてスタート</button>
+    </section>
+
+    <section id="gameScreen" class="screen hidden">
+      <header id="hud">
+        <div id="roundLabel">ROUND 1 / 5</div>
+        <div id="scoreLabel">SCORE 0</div>
+        <div id="attemptsLabel">挑戦 1回目</div>
+      </header>
+
+      <div id="playArea">
+        <button id="sampleCard">
+          <span id="sampleIcon">🎵</span>
+          <span id="sampleLabel">タップしてお手本を聴く</span>
+        </button>
+
+        <div id="feedbackLabel"></div>
+
+        <div id="noteGrid"></div>
+
+        <button id="playChordBtn" class="primary-btn" disabled>和音を鳴らす(0/3)</button>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen hidden">
+      <h2 id="resultTitle">♪ sakura_88 入手!</h2>
+      <p id="resultMessage"></p>
+      <button id="retryBtn" class="primary-btn">もう一度あそぶ</button>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

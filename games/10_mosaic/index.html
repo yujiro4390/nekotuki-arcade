@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>何が映ってるでしょうかクイズ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <section id="startScreen" class="screen">
+      <p class="song-tag">ダンジョンRPG企画 ミニゲーム #10 / 対応曲: aenaiyoru</p>
+      <h1>ぼやけた記憶を<br>取り戻せ!</h1>
+      <p class="hint">
+        ぼやけた写真が、時間とともに少しずつクリアになっていく。<br>
+        「何の写真か」早く当てるほど高得点!<br>
+        選択肢には正解と紛らわしいダミーも混じってるので油断禁物。<br>
+        全6ラウンド、全問正解で曲入手。一発勝負、外すとそのラウンドは失敗のまま次へ。
+      </p>
+      <p class="best-hint" id="bestHint"></p>
+      <button id="startBtn" class="primary-btn">タップしてスタート</button>
+    </section>
+
+    <section id="gameScreen" class="screen hidden">
+      <header id="hud">
+        <div id="roundLabel">ROUND 1 / 6</div>
+        <div id="scoreLabel">SCORE 0</div>
+        <button id="muteBtn" class="mute-btn">🔊</button>
+      </header>
+
+      <div id="playArea">
+        <div id="photoFrame">
+          <div id="photo"></div>
+        </div>
+        <div id="feedbackLabel"></div>
+        <div id="choices"></div>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen hidden">
+      <h2 id="resultTitle">結果</h2>
+      <p id="resultMessage"></p>
+      <button id="retryBtn" class="primary-btn">もう一度あそぶ</button>
+    </section>
+
+    <audio id="bgm" src="assets/aenaiyoru.m4a" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

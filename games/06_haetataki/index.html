@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>刺される前に叩け!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <section id="startScreen" class="screen">
+      <p class="song-tag">ダンジョンRPG企画 ミニゲーム #06 / 対応曲: hoshizora</p>
+      <h1>刺される前に<br>叩くんだ!</h1>
+      <p class="hint">
+        乱入してくる虫をタップで撃退!<br>
+        蚊は1タップ、サングラスの蜂は手強くて2タップ必要。<br>
+        しばらくは飛び回るだけだけど、長く放っておくと<br>
+        動きを止めて一気に迫ってくる。間に合わないとダメージ。<br>
+        ライフは❤️×10、ただし結構くらう難易度なので油断禁物。<br><br>
+        ハートの矢を持った味方が出たらタップでハート回復!
+      </p>
+      <p class="best-hint" id="bestHint"></p>
+      <button id="startBtn" class="primary-btn" disabled>読み込み中…</button>
+    </section>
+
+    <section id="gameScreen" class="screen hidden">
+      <header id="hud">
+        <div id="livesLabel">❤️ 10/10</div>
+        <div id="scoreLabel">SCORE 0</div>
+        <div id="comboLabel" class="hidden">0 COMBO</div>
+        <button id="muteBtn" class="mute-btn">🔊</button>
+      </header>
+      <div id="toast" class="hidden"></div>
+      <div id="field"></div>
+    </section>
+
+    <section id="resultScreen" class="screen hidden">
+      <h2 id="resultTitle">結果</h2>
+      <p id="resultMessage"></p>
+      <button id="retryBtn" class="primary-btn">もう一度あそぶ</button>
+    </section>
+
+    <audio id="bgm" src="assets/hoshizora.m4a" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

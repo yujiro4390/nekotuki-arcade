@@ -1,0 +1,113 @@
+:root {
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --ink: #22252b;
+  --ink-soft: #5c6270;
+  --line: #e2dfd6;
+  --accent: #e0783a;
+  --accent-soft: #fbe8da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181d;
+    --surface: #1f2228;
+    --ink: #eef0f4;
+    --ink-soft: #a4a9b5;
+    --line: #30343c;
+    --accent: #f2955a;
+    --accent-soft: #3a2a1e;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+  line-height: 1.7;
+}
+
+.hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 64px 24px 32px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin: 0 0 12px;
+}
+
+h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  margin: 0 0 14px;
+}
+
+.lede {
+  color: var(--ink-soft);
+  font-size: 16px;
+  margin: 0 0 16px;
+}
+
+.note {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+
+.grid {
+  max-width: 1040px;
+  margin: 24px auto 64px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.card-desc {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  border-top: 1px solid var(--line);
+}

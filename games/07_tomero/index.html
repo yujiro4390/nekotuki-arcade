@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>10秒で止めろ!ゲーム</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <section id="startScreen" class="screen">
+      <p class="song-tag">ダンジョンRPG企画 ミニゲーム #07 / 対応曲(仮): startline</p>
+      <h1>感覚だけで<br>ピタッと止めろ!</h1>
+      <p class="hint">
+        目標は全ラウンド共通で「10.00秒ぴったり」。<br>
+        許容誤差は±0.3秒、全3ラウンドとも合格したら曲入手!<br>
+        ただし…<strong>ラウンドが進むと数字が見えなくなっていく。</strong><br>
+        ROUND2は7秒で、ROUND3は2秒で数字が消える。<br>
+        最後は感覚だけが頼り。
+      </p>
+      <p class="best-hint" id="bestHint"></p>
+      <button id="startBtn" class="primary-btn" disabled>読み込み中…</button>
+    </section>
+
+    <section id="gameScreen" class="screen hidden">
+      <header id="hud">
+        <div id="roundLabel">ROUND 1 / 3</div>
+        <div id="scoreLabel">SCORE 0</div>
+      </header>
+
+      <div id="playArea">
+        <div id="targetLabel">目標 -.-- 秒</div>
+        <div id="timerDisplay">0.00</div>
+        <div id="gaugeWrap">
+          <div id="gauge">
+            <div id="gaugeTarget"></div>
+            <div id="gaugeTolerance"></div>
+            <div id="gaugeMarker" class="hidden"></div>
+          </div>
+        </div>
+        <div id="feedbackLabel"></div>
+        <button id="roundBtn" class="primary-btn">▶ スタート</button>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen hidden">
+      <h2 id="resultTitle">結果</h2>
+      <p id="resultMessage"></p>
+      <button id="retryBtn" class="primary-btn">もう一度あそぶ</button>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

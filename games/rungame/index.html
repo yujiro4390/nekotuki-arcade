@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ねこつきラン</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <h1>ねこつきラン</h1>
+
+  <div id="charSelect" class="screen">
+    <p class="hint">キャラを選んでね</p>
+    <div id="charList" class="char-list"></div>
+    <button id="startBtn" class="primary-btn">スタート</button>
+    <div id="rankingPreview"></div>
+  </div>
+
+  <div id="gameScreen" class="screen hidden">
+    <div id="hud">
+      <span id="scoreLabel">SCORE: 0</span>
+      <span id="notesLabel">♪ 0</span>
+      <span id="iraLabel">イラ 10</span>
+      <span id="bestLabel">BEST: 0</span>
+    </div>
+    <canvas id="canvas" width="800" height="300"></canvas>
+    <p class="hint">スペース / ↑ / タップ でジャンプ</p>
+  </div>
+
+  <div id="gameOverScreen" class="screen hidden">
+    <h2 id="gameOverTitle">ゲームオーバー</h2>
+    <p id="gameOverMessage" class="game-over-message"></p>
+    <p id="finalScore" class="final-score">SCORE: 0</p>
+    <div id="nameEntry">
+      <input id="nameInput" type="text" placeholder="なまえ" maxlength="10">
+      <div id="recentChips" class="chip-list"></div>
+      <button id="saveScoreBtn" class="primary-btn">記録してリーダーボードへ</button>
+    </div>
+    <button id="retryBtn" class="secondary-btn">もう一回</button>
+  </div>
+
+  <div id="rankingScreen" class="screen hidden">
+    <h2>リーダーボード</h2>
+    <ol id="rankingList"></ol>
+    <button id="backToTitleBtn" class="secondary-btn">タイトルへ</button>
+  </div>
+
+  <div id="errorBanner"></div>
+</div>
+<audio id="bgm" src="assets/bgm.m4a" preload="auto"></audio>
+<script src="script.js"></script>
+</body>
+</html>

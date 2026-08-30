@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>楽屋そうじ 仕分けゲーム</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <div id="startScreen" class="screen">
+    <h1>楽屋そうじ<br>仕分けゲーム</h1>
+    <p class="song-tag">♪ Fixed Mind</p>
+    <p class="hint">流れてくる私物を、持ち主のレーンへドラッグして仕分けよう!<br>落下スピードはだんだん上がるよ。曲が終わったら終了だよ。</p>
+    <p class="best-hint" id="bestHint"></p>
+    <button id="startBtn" class="primary-btn" disabled>読み込み中…</button>
+  </div>
+
+  <div id="gameScreen" class="screen hidden">
+    <div id="hud">
+      <span id="scoreLabel">SCORE 0</span>
+      <span id="comboLabel" class="hidden"></span>
+      <span id="missLabel">ミス 0/3</span>
+      <button id="muteBtn" class="mute-btn" aria-label="ミュート切替">🔊</button>
+    </div>
+
+    <div id="toast" class="hidden"></div>
+
+    <div id="belt"></div>
+
+    <div id="lanes">
+      <div class="lane" data-member="saaya">
+        <div class="lane-drop"></div>
+        <img class="lane-icon" src="assets/lane-saaya.png" alt="さあや">
+        <span class="lane-name">さあや</span>
+      </div>
+      <div class="lane" data-member="maana">
+        <div class="lane-drop"></div>
+        <img class="lane-icon" src="assets/lane-maana.png" alt="まあな">
+        <span class="lane-name">まあな</span>
+      </div>
+      <div class="lane" data-member="yujiro">
+        <div class="lane-drop"></div>
+        <img class="lane-icon" src="assets/lane-yujiro.png" alt="ゆうじろう">
+        <span class="lane-name">ゆうじろう</span>
+      </div>
+      <div class="lane" data-member="kojiro">
+        <div class="lane-drop"></div>
+        <img class="lane-icon" src="assets/lane-kojiro.png" alt="こうじろう">
+        <span class="lane-name">こうじろう</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="resultScreen" class="screen hidden">
+    <h2 id="resultTitle"></h2>
+    <p id="resultMessage"></p>
+    <button id="retryBtn" class="primary-btn">もう一回</button>
+  </div>
+
+  <audio id="bgm" src="assets/bgm.m4a" preload="auto"></audio>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ミニシューティング</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <section id="startScreen" class="screen">
+      <p class="song-tag">ダンジョンRPG企画 ミニゲーム #05 / 対応曲(仮): harukaze</p>
+      <h1>指で操って<br>撃って避けろ!</h1>
+      <p class="hint">
+        指を置いた場所に自機がついてくる(ドラッグ操作)。<br>
+        弾は自動発射、上から降ってくる敵を撃ち落とそう。<br>
+        敵を倒すとたまに(10%)アイテムドロップ!<br>
+        オプション追加・範囲レーザー・追尾ミサイル・回復の4種。<br>
+        敵や敵弾に当たるとライフ-1(❤️×3)。<br>
+        しばらくすると雑魚を産み出しながら弾も撃ってくるボスが出現、倒せばクリア!
+      </p>
+      <p class="best-hint" id="bestHint"></p>
+      <button id="startBtn" class="primary-btn" disabled>読み込み中…</button>
+    </section>
+
+    <section id="gameScreen" class="screen hidden">
+      <header id="hud">
+        <div id="livesLabel">❤️❤️❤️</div>
+        <div id="scoreLabel">SCORE 0</div>
+        <button id="muteBtn" class="mute-btn">🔊</button>
+      </header>
+      <div id="toast" class="hidden"></div>
+      <div id="bossHpWrap" class="hidden">
+        <div id="bossHpLabel">BOSS</div>
+        <div id="bossHpBar"><div id="bossHpFill"></div></div>
+      </div>
+      <div id="field"></div>
+    </section>
+
+    <section id="resultScreen" class="screen hidden">
+      <h2 id="resultTitle">結果</h2>
+      <p id="resultMessage"></p>
+      <button id="retryBtn" class="primary-btn">もう一度あそぶ</button>
+    </section>
+
+    <audio id="bgm" src="assets/harukaze.m4a" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>ネコツキBAND パズル - 詰みタイムアタック</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="bgm" src="assets/bgm.m4a" preload="auto"></audio>
+<div id="error-banner" class="error-banner hidden"></div>
+
+<!-- タイトル / プレイヤー入力画面 -->
+<section id="screen-title" class="screen">
+  <h1>ねこつきBAND<br><span class="sub">つみパズル タイムアタック</span></h1>
+  <p class="desc">
+    グリッドにブロックを置いて列を揃えると消える。<br>
+    曲(悲しみ reprise, 約1分22秒)が終わるか、<br>
+    3つの手持ちブロックがどこにも置けなくなったら<b>詰み</b>で終了。<br>
+    それまでにどれだけスコアを稼げるか、メンバーで競おう。
+  </p>
+  <div class="field">
+    <label for="player-name">プレイヤー名</label>
+    <input type="text" id="player-name" maxlength="10" placeholder="例: ゆうじろー">
+  </div>
+  <div id="quick-names" class="quick-names"></div>
+  <button id="btn-start" class="btn btn-primary">スタート</button>
+  <button id="btn-show-board" class="btn btn-ghost">ランキングを見る</button>
+</section>
+
+<!-- ゲーム画面 -->
+<section id="screen-game" class="screen hidden">
+  <div class="hud">
+    <div class="hud-item">
+      <span class="hud-label">SCORE</span>
+      <span id="score" class="hud-value">0</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">PLAYER</span>
+      <span id="hud-player" class="hud-value hud-player"></span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">🎵 残り</span>
+      <div class="song-bar-track"><div id="song-bar" class="song-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <div id="board" class="board"></div>
+
+  <div id="tray" class="tray"></div>
+
+  <p id="hint" class="hint">ブロックをタップして選び、置きたいマスをタップ</p>
+</section>
+
+<!-- ゲームオーバー画面 -->
+<section id="screen-over" class="screen hidden">
+  <h2 id="over-title">詰み!</h2>
+  <p class="over-score">スコア <span id="final-score">0</span></p>
+  <p id="over-reason" class="over-reason"></p>
+  <button id="btn-again" class="btn btn-primary">つぎのメンバーへ</button>
+  <button id="btn-board" class="btn btn-ghost">ランキングを見る</button>
+</section>
+
+<!-- ランキング画面 -->
+<section id="screen-board" class="screen hidden">
+  <h2>ランキング</h2>
+  <ol id="leaderboard" class="leaderboard"></ol>
+  <button id="btn-board-back" class="btn btn-primary">もどる</button>
+  <button id="btn-board-clear" class="btn btn-ghost">記録をリセット</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
